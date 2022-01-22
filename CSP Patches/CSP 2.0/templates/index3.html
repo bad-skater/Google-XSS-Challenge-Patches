@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' ajax.googleapis.com ;">
+    <script src="{{url_for('static', filename='game-frame.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='game-frame-styles.css')}}" />
+ 
+    <!-- Load jQuery -->
+    <script
+      src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+  </head>
+  <body id="level3">
+    <div id="header">
+      <img id="logo" src="/static/logos/level3.png">
+      <span>Take a tour of our cloud data center.</a>
+    </div>
+    <div class="tab" id="tab1">Image 1</div>
+    <div class="tab" id="tab2" >Image 2</div>
+    <div class="tab" id="tab3" >Image 3</div>
+    <div id="tabContent"> </div>
+    <script src="{{url_for('static', filename='level3.js')}}"></script>
+  </body>
+</html>

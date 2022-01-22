@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-12345'"> -->
+    <script src="{{url_for('static', filename='game-frame.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='game-frame-styles.css')}}" />
+ 
+    <script nonce="12345">
+      function startTimer(seconds) {
+        seconds = parseInt(seconds) || 3;
+        setTimeout(function() { 
+          window.confirm("Time is up!");
+          window.history.back();
+        }, seconds * 1000);
+      }
+    </script>
+  </head>
+  <body id="level4">
+    <img src="/static/logos/level4.png" />
+    <br>
+    <img src="/static/loading.gif"/>
+    <script nonce="12345">startTimer('{{ timer }}');</script>
+    <br>
+    <div id="message">Your timer will execute in {{ timer }} seconds.</div>
+  </body>
+</html>
